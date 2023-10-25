@@ -13,7 +13,7 @@ main {
   width: 700px;
 }
 
-li.completed input[type="text"] {
+.completed div {
   text-decoration: line-through;
   color: #00000089;
 }
@@ -36,6 +36,9 @@ li.completed input[type="text"] {
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
+}
+.checked:checked ~ .personal_check::before {
+  opacity: 1;
 }
 
 .bisness_check {
@@ -60,7 +63,7 @@ li.completed input[type="text"] {
   transform: translate(-50%, -50%);
   opacity: 0;
 }
-.checked:checked .bisness_check::before {
+.checked:checked ~ .bisness_check::before {
   opacity: 1;
 }
 
@@ -92,4 +95,16 @@ li.completed input[type="text"] {
 }
 .checked {
   display: none;
+}
+#personal {
+  display: none;
+}
+#bisness {
+  display: none;
+}
+li {
+  display: flex;
+}
+li div {
+  width: 300px;
 }
