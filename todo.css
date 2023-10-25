@@ -8,28 +8,37 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(77, 73, 73, 0.166);
+  /* background-color: rgba(77, 73, 73, 0.166); */
+  background-image: url(./assets/ivan-dimitrov-GUZopnPYiC8-unsplash.jpg);
+  background-size: cover;
 }
 main {
   width: 700px;
+  margin-bottom: 40px;
 }
 h1 {
   font-size: 50px;
+  margin-top: 20px;
+  color: white;
 }
 h2 {
   margin-top: 30px;
+  color: white;
 }
 .input_todo > h2 {
   font-size: 35px;
   font-weight: 400;
+  color: white;
 }
 .input_balel {
   margin-top: 20px;
   font-size: 20px;
+  color: white;
 }
 .pick {
   margin-top: 20px;
   font-weight: 400;
+  color: white;
 }
 .completed {
   text-decoration: line-through;
@@ -46,6 +55,11 @@ h2 {
   position: relative;
   cursor: pointer;
 }
+.personal_check:hover {
+  -webkit-box-shadow: 0px 0px 38px 7px rgba(209, 30, 136, 0.2);
+  -moz-box-shadow: 0px 0px 38px 7px rgba(209, 30, 136, 0.2);
+  box-shadow: 0px 0px 38px 7px rgba(209, 30, 136, 0.2);
+}
 .personal_check::before {
   content: "";
   width: 12px;
@@ -53,6 +67,7 @@ h2 {
   background-color: rgba(209, 30, 136, 1);
   border-radius: 50%;
   opacity: 0;
+  transition: 0.3s;
 }
 .checked:checked ~ .personal_check::before {
   opacity: 1;
@@ -68,6 +83,11 @@ h2 {
   border-radius: 50%;
   position: relative;
   cursor: pointer;
+}
+.bisness_check:hover {
+  -webkit-box-shadow: 0px 0px 38px 19px rgba(42, 116, 198, 0.2);
+  -moz-box-shadow: 0px 0px 38px 19px rgba(42, 116, 198, 0.2);
+  box-shadow: 0px 0px 38px 19px rgba(42, 116, 198, 0.2);
 }
 
 .bisness_check::before {
@@ -163,6 +183,11 @@ li div {
   border: none;
   color: white;
 }
+.edit:hover {
+  -webkit-box-shadow: 0px 0px 38px 7px rgba(209, 30, 136, 0.2);
+  -moz-box-shadow: 0px 0px 38px 7px rgba(209, 30, 136, 0.2);
+  box-shadow: 0px 0px 38px 7px rgba(209, 30, 136, 0.2);
+}
 
 .delete {
   background-color: #dc4644;
@@ -174,6 +199,11 @@ li div {
   border: none;
   color: white;
 }
+.delete:hover {
+  -webkit-box-shadow: 0px 0px 38px 19px rgba(220, 70, 68, 0.2);
+  -moz-box-shadow: 0px 0px 38px 19px rgba(220, 70, 68, 0.2);
+  box-shadow: 0px 0px 38px 19px rgba(220, 70, 68, 0.2);
+}
 .add {
   height: 60px;
   border: none;
@@ -182,4 +212,10 @@ li div {
   cursor: pointer;
   margin-top: 40px;
   color: white;
+}
+
+.add:hover {
+  -webkit-box-shadow: 0px 0px 38px 19px rgba(42, 116, 198, 0.2);
+  -moz-box-shadow: 0px 0px 38px 19px rgba(42, 116, 198, 0.2);
+  box-shadow: 0px 0px 38px 19px rgba(42, 116, 198, 0.2);
 }
