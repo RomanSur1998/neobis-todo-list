@@ -3,6 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./todo.css" />
     <title>TODO-LIST</title>
   </head>
   <body>
@@ -10,30 +17,38 @@
       <h1>My TDOO list</h1>
     </header>
     <main>
-      <h2>CREATE A TODO</h2>
-      <label for="todo">
-        What`s on your todo list!
-        <input type="text" id="todo" placeholder="Write todo ..." />
-      </label>
-      <h3>Pick a categore</h3>
-      <div class="category">
-        <div class="bisness">
-          <label for="bisness""
-            >Bisness
-            <input type="checkbox" id="bisness" />
+      <section class="form_todo">
+        <div class="input_todo">
+          <h2>CREATE A TODO</h2>
+          <label for="todo">
+            What's on your todo list!
+            <input type="text" id="todo" placeholder="Write todo ..." />
           </label>
         </div>
-        <div class="personal">
-          <label for="personal"
-            >personal
-            <input type="checkbox" id="personal" />
-          </label>
+        <div>
+          <h3>Pick a category</h3>
+          <div class="category">
+            <div class="bisness">
+              <label for="bisness">
+                <span class=""></span>
+                <input type="checkbox" id="bisness" />
+                Bisness
+              </label>
+            </div>
+            <div class="personal">
+              <label for="personal">
+                <span></span>
+                <input type="checkbox" id="personal" />
+                Personal
+              </label>
+            </div>
+          </div>
         </div>
-      </div>
-      <button class="add"> Add todo</button>
-      <ul class="list">
-
-      </ul>
+        <button class="add">Add todo</button>
+      </section>
+      <section class="tasl_list">
+        <ul class="list"></ul>
+      </section>
     </main>
     <script src="./todo.js"></script>
   </body>

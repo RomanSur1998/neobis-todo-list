@@ -1,0 +1,95 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main {
+  width: 700px;
+}
+
+li.completed input[type="text"] {
+  text-decoration: line-through;
+  color: #00000089;
+}
+.personal_check {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgb(160, 14, 85);
+  border-radius: 15px;
+  position: relative;
+}
+.personal_check::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-color: rgb(160, 14, 85);
+  position: absolute;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.bisness_check {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgb(19, 52, 202);
+  border-radius: 15px;
+  position: relative;
+}
+
+.bisness_check::before {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-color: rgb(19, 52, 202);
+  position: absolute;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.checked:checked .bisness_check::before {
+  opacity: 1;
+}
+
+.form_todo {
+  display: flex;
+  flex-direction: column;
+  background-color: aqua;
+}
+.input_todo {
+  display: flex;
+  flex-direction: column;
+}
+
+.input_todo > label {
+  display: flex;
+  flex-direction: column;
+}
+.category {
+  display: flex;
+  justify-content: space-evenly;
+}
+.category label {
+  display: flex;
+  flex-direction: column;
+}
+#todo {
+  height: 60px;
+  border-radius: 10px;
+}
+.checked {
+  display: none;
+}
