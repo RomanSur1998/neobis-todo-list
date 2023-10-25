@@ -1,99 +1,3 @@
-// let input = document.querySelector("#todo");
-// let bisness = document.querySelector("#bisness");
-// let personal = document.querySelector("#personal");
-// let add = document.querySelector(".add");
-// let list = document.querySelector(".list");
-
-// console.log(bisness);
-// let newTask = {
-//   task: "",
-//   type: false,
-//   done: false,
-// };
-
-// GetTodoList();
-// function GetTodoList() {
-//   if (!localStorage.getItem("neobis-todo")) {
-//     localStorage.setItem("neobis-todo", "[]");
-//   }
-//   let data = JSON.parse(localStorage.getItem("neobis-todo"));
-//   list.innerHTML = "";
-//   data.forEach((elem) => {});
-//   data.forEach((elem, index) => {
-//     list.innerHTML += `
-//     <li class = "${elem.done ? "completed" : ""}">
-//     <label ">
-//     <span  class="${elem.type ? "bisness_check" : "personal_check"}" ></span>
-//     <input  type="checkbox" ${
-//       elem.done ? "checked" : ""
-//     } onclick="DoneTask(${index})" class="checked" />
-//     </label>
-
-//     <input type="text" value="${
-//       elem.task
-//     }" onblur="SaveEdit(${index}, this.value)" index="${index}" readonly  />
-//     </label>
-//     <button class="edit" onclick="EditTask(${index})">Edit</button>
-//       <button class="add" onclick="Delete(${index})" > Delete</button>
-//     </li> `;
-//   });
-// }
-
-// add.addEventListener("click", () => {
-//   if (!input.value) {
-//     alert("Заполните поле");
-//   } else {
-//     newTask.task = input.value;
-//     AddTask(newTask);
-//     console.log(newTask);
-//   }
-// });
-
-// bisness.addEventListener("click", () => {
-//   newTask.type = true;
-//   personal.checked = false;
-// });
-// personal.addEventListener("click", () => {
-//   newTask.type = false;
-//   bisness.checked = false;
-// });
-
-// function DoneTask(index) {
-//   let data = JSON.parse(localStorage.getItem("neobis-todo"));
-//   data[index].done = !data[index].done;
-//   console.log(data[index]);
-//   localStorage.setItem("neobis-todo", JSON.stringify(data));
-//   GetTodoList();
-// }
-
-// function AddTask(task) {
-//   let data = JSON.parse(localStorage.getItem("neobis-todo"));
-//   data.push(task);
-//   localStorage.setItem("neobis-todo", JSON.stringify(data));
-//   input.value = "";
-//   GetTodoList();
-// }
-
-// function Delete(index) {
-//   let data = JSON.parse(localStorage.getItem("neobis-todo"));
-//   data.splice(index, 1);
-//   localStorage.setItem("neobis-todo", JSON.stringify(data));
-//   GetTodoList();
-// }
-
-// function EditTask(index) {
-//   const taskInput = document.querySelector(`input[index="${index}"]`);
-//   taskInput.removeAttribute("readonly");
-//   taskInput.removeAttribute("active");
-// }
-
-// function SaveEdit(index, editedText) {
-//   let data = JSON.parse(localStorage.getItem("neobis-todo"));
-//   data[index].task = editedText;
-//   localStorage.setItem("neobis-todo", JSON.stringify(data));
-//   GetTodoList();
-// }
-
 let input = document.querySelector("#todo");
 let bisness = document.querySelector("#bisness");
 let personal = document.querySelector("#personal");
@@ -118,7 +22,9 @@ function GetTodoList() {
   list.innerHTML = "";
   data.forEach((elem, index) => {
     const listItem = document.createElement("li");
-    listItem.className = elem.done ? "completed" : "";
+
+    const divCheck = document.createElement("div");
+    const divButton = document.createElement("div");
 
     const label = document.createElement("label");
     label.setAttribute("for", index);
@@ -134,6 +40,7 @@ function GetTodoList() {
     checkbox.addEventListener("click", () => DoneTask(index));
 
     const textDiv = document.createElement("div");
+    textDiv.className = elem.done ? "completed" : "";
     textDiv.textContent = elem.task;
     textDiv.setAttribute("contentEditable", false);
 
@@ -143,17 +50,20 @@ function GetTodoList() {
     editButton.addEventListener("click", () => EditTask(index, textDiv));
 
     const deleteButton = document.createElement("button");
-    deleteButton.className = "add";
+    deleteButton.className = "delete";
     deleteButton.textContent = "Delete";
     deleteButton.addEventListener("click", () => Delete(index));
 
     label.appendChild(checkbox);
     label.appendChild(span);
 
-    listItem.appendChild(label);
-    listItem.appendChild(textDiv);
-    listItem.appendChild(editButton);
-    listItem.appendChild(deleteButton);
+    divCheck.appendChild(label);
+    divCheck.appendChild(textDiv);
+    divButton.appendChild(editButton);
+    divButton.appendChild(deleteButton);
+
+    listItem.appendChild(divCheck);
+    listItem.appendChild(divButton);
 
     list.appendChild(listItem);
   });
@@ -205,6 +115,8 @@ function Delete(index) {
 function EditTask(index, textDiv) {
   textDiv.setAttribute("contentEditable", true);
   textDiv.focus();
+  textDiv.style.outline = "none";
+  textDiv.style.cursor = "text";
   textDiv.addEventListener("blur", () => SaveEdit(index, textDiv.textContent));
 }
 
