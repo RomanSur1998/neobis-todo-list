@@ -5,7 +5,7 @@ TO_DO LIST
 
 Как пользоваться .
 Основное поле для работы , это форма ввода :
-(./assets/image-1.png)
+![Alt text](./assets/image-1.png)
 
 В поле ввода, вевести задачу :
 ![Alt text](./assets/image.png)
