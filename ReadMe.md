@@ -4,16 +4,16 @@ TO_DO LIST
 
 Как пользоваться .
 Основное поле для работы , это форма ввода :
-![Alt text](image-1.png)
+![Alt text](./assets/image-1.png)
 
 В поле ввода, вевести задачу :
-![Alt text](image.png)
+![Alt text](./assets/image.png)
 
 Выбрать тип задачи , по умолчанию стоит тип "личные" :
-![Alt text](image-2.png)
+![Alt text](./assets/image-2.png)
 
 Задачу можно пометить как выполненную:
-![Alt text](image-3.png)
+![Alt text](./assets/image-3.png)
 
 Редактирование задачи производиться путем нажатия на кнопку "Edit"
 Удаление при помощи кнопки "Delete
