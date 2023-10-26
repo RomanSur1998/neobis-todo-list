@@ -4,8 +4,6 @@ let personal = document.querySelector("#personal");
 let add = document.querySelector(".add");
 let list = document.querySelector(".list");
 
-console.log(bisness);
-
 let newTask = {
   task: "",
   type: false,
@@ -13,7 +11,7 @@ let newTask = {
 };
 
 GetTodoList();
-
+console.log(new Date().toLocaleDateString());
 function GetTodoList() {
   if (!localStorage.getItem("neobis-todo")) {
     localStorage.setItem("neobis-todo", "[]");
